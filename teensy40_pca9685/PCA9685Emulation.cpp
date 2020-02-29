@@ -45,15 +45,6 @@ void PCA9685Emulator::begin(uint8_t i2c_address)
   Wire.onReceive(onReceive);
 }
 
-bool PCA9685Emulator::step(uint32_t now)
-{
-  bool ret;
-  cli();
-  ret = gotwrite;
-  gotwrite = false;
-  sei();
-  return ret;
-}
 
 uint16_t PCA9685Emulator::readChannelUs(uint16_t ch) {
   if (ch >= NUM_CHANNELS) {

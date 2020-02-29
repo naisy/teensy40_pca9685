@@ -6,8 +6,6 @@ public:
   PCA9685Emulator();
   void begin(uint8_t address);
   //  Return true if there are new values
-  bool step(uint32_t now);
-  //  Return servo PWM value in microseconds
   uint16_t readChannelUs(uint16_t ch);
 
   void onRequest2();
